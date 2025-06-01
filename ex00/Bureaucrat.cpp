@@ -6,7 +6,7 @@
 /*   By: ribana-b <ribana-b@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 15:22:11 by ribana-b          #+#    #+# Malaga      */
-/*   Updated: 2025/06/01 14:04:39 by ribana-b         ###   ########.com      */
+/*   Updated: 2025/06/01 20:09:10 by ribana-b         ###   ########.com      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Bureaucrat::Bureaucrat(const std::string& newName, int newGrade) :
 	name(newName),
 	grade(newGrade)
 {
-	OCF_MESSAGE("Default constructor called");
+	OCF_MESSAGE("Bureaucrat Default constructor called");
 
 	if (grade < HIGHEST_GRADE)
 	{
@@ -42,19 +42,19 @@ Bureaucrat::Bureaucrat(const std::string& newName, int newGrade) :
 
 Bureaucrat::~Bureaucrat()
 {
-	OCF_MESSAGE("Destructor called");
+	OCF_MESSAGE("Bureaucrat Destructor called");
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& that) :
 	name(that.name),
 	grade(that.grade)
 {
-	OCF_MESSAGE("Copy constructor called");
+	OCF_MESSAGE("Bureaucrat Copy constructor called");
 }
 
 Bureaucrat&	Bureaucrat::operator=(const Bureaucrat& that)
 {
-	OCF_MESSAGE("Assignment operator called");
+	OCF_MESSAGE("Bureaucrat Assignment operator called");
 	if (this != &that)
 	{
 		this->grade = that.grade;
