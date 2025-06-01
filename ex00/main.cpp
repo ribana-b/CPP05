@@ -6,7 +6,7 @@
 /*   By: ribana-b <ribana-b@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 20:34:18 by ribana-b          #+#    #+# Malaga      */
-/*   Updated: 2025/06/01 23:12:05 by ribana-b         ###   ########.com      */
+/*   Updated: 2025/06/01 23:57:38 by ribana-b         ###   ########.com      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void testBureaucratIncreaseGradeInBounds(std::size_t testIndex)
 		}
 		if (ceniafo.getGrade() != Bureaucrat::LOWEST_GRADE - amount)
 		{
-			PP_UNDEFINED_EXCEPTION("Grades doesn't match");
+			PP_UNDEFINED_EXCEPTION("Grades don't match");
 		}
 	}
 	catch (const std::exception& e)
@@ -109,7 +109,7 @@ void testBureaucratDecreaseGradeInBounds(std::size_t testIndex)
 		}
 		if (deronfo.getGrade() != Bureaucrat::HIGHEST_GRADE + amount)
 		{
-			PP_UNDEFINED_EXCEPTION("Grades doesn't match");
+			PP_UNDEFINED_EXCEPTION("Grades don't match");
 		}
 	}
 	catch (const std::exception& e)
