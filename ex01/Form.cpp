@@ -6,7 +6,7 @@
 /*   By: ribana-b <ribana-b@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 18:41:24 by ribana-b          #+#    #+# Malaga      */
-/*   Updated: 2025/06/02 00:45:21 by ribana-b         ###   ########.com      */
+/*   Updated: 2025/06/02 10:28:05 by ribana-b         ###   ########.com      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Form::Form(const std::string& newName, int newMinGradeToSign, int newMinGradeToE
 	minGradeToSign(newMinGradeToSign),
 	minGradeToExecute(newMinGradeToExecute)
 {
-	OCF_MESSAGE("Form Default constructor called");
+	OCF_MESSAGE("Form constructor called");
 
 	if (minGradeToSign < Bureaucrat::HIGHEST_GRADE
 		|| minGradeToExecute < Bureaucrat::HIGHEST_GRADE)
@@ -40,6 +40,15 @@ Form::Form(const std::string& newName, int newMinGradeToSign, int newMinGradeToE
 	{
 		throw(GradeTooLowException(Bureaucrat::LOWEST_GRADE));
 	}
+}
+
+Form::Form() :
+	name("Default Form"),
+	isSigned(false),
+	minGradeToSign(Bureaucrat::LOWEST_GRADE),
+	minGradeToExecute(Bureaucrat::LOWEST_GRADE)
+{
+	OCF_MESSAGE("Form Default constructor called");
 }
 
 Form::~Form()

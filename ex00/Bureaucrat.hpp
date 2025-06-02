@@ -6,7 +6,7 @@
 /*   By: ribana-b <ribana-b@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 16:58:18 by ribana-b          #+#    #+# Malaga      */
-/*   Updated: 2025/06/01 18:36:25 by ribana-b         ###   ########.com      */
+/*   Updated: 2025/06/02 10:24:47 by ribana-b         ###   ########.com      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class Bureaucrat
 {
 	public:
 		Bureaucrat(const std::string& newName, int grade);
+		Bureaucrat();
 		~Bureaucrat();
 		Bureaucrat(const Bureaucrat& that);
 		Bureaucrat& operator=(const Bureaucrat& that);

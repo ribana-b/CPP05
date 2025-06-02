@@ -6,7 +6,7 @@
 /*   By: ribana-b <ribana-b@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 15:22:11 by ribana-b          #+#    #+# Malaga      */
-/*   Updated: 2025/06/02 00:30:19 by ribana-b         ###   ########.com      */
+/*   Updated: 2025/06/02 10:26:15 by ribana-b         ###   ########.com      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ Bureaucrat::Bureaucrat(const std::string& newName, int newGrade) :
 	name(newName),
 	grade(newGrade)
 {
-	OCF_MESSAGE("Bureaucrat Default constructor called");
+	OCF_MESSAGE("Bureaucrat constructor called");
 
 	if (grade < HIGHEST_GRADE)
 	{
@@ -43,6 +43,13 @@ Bureaucrat::Bureaucrat(const std::string& newName, int newGrade) :
 	{
 		throw(GradeTooLowException());
 	}
+}
+
+Bureaucrat::Bureaucrat() :
+	name("Default Bureaucrat"),
+	grade(Bureaucrat::LOWEST_GRADE)
+{
+	OCF_MESSAGE("Bureaucrat Default constructor called");
 }
 
 Bureaucrat::~Bureaucrat()

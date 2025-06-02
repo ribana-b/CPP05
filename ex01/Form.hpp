@@ -6,7 +6,7 @@
 /*   By: ribana-b <ribana-b@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 17:27:59 by ribana-b          #+#    #+# Malaga      */
-/*   Updated: 2025/06/02 00:21:30 by ribana-b         ###   ########.com      */
+/*   Updated: 2025/06/02 10:28:12 by ribana-b         ###   ########.com      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ class Form
 {
 	public:
 		Form(const std::string& newName, int newMinGradeToSign, int newMinGradeToExecute);
+		Form();
 		~Form();
 		Form(const Form& that);
 		Form& operator=(const Form& that);
