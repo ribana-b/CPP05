@@ -6,7 +6,7 @@
 /*   By: ribana-b <ribana-b@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 15:22:11 by ribana-b          #+#    #+# Malaga      */
-/*   Updated: 2025/06/02 10:26:15 by ribana-b         ###   ########.com      */
+/*   Updated: 2025/06/02 10:34:13 by ribana-b         ###   ########.com      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,6 @@
 #else
 # define OCF_MESSAGE(X) std::cout << (X) << std::endl
 #endif
-
-// Helper macro to print errors
-#define PP_ERROR(message) do{\
-	std::cerr << "\033[31mERROR: \033[0m" << (message) << std::endl;\
-} while(0)
 
 const int	Bureaucrat::HIGHEST_GRADE = 1;
 const int	Bureaucrat::LOWEST_GRADE = 150;
