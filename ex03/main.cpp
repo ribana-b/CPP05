@@ -6,7 +6,7 @@
 /*   By: ribana-b <ribana-b@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 20:34:18 by ribana-b          #+#    #+# Malaga      */
-/*   Updated: 2025/06/03 11:31:24 by ribana-b         ###   ########.com      */
+/*   Updated: 2025/06/04 06:49:47 by ribana-b         ###   ########.com      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -678,14 +678,56 @@ void	testInternMakeRobotomyRequestForms(std::size_t testIndex)
 {
 	PP_TEST(testIndex);
 
+	Bureaucrat bluq("Bluq", Bureaucrat::HIGHEST_GRADE);
 	Intern bluqIntern;
+
+	AForm* bluqForm = bluqIntern.makeForm("robotomyrequest", "bluqform");
+	bluq.signForm(*bluqForm);
+	bluq.executeForm(*bluqForm);
+	delete bluqForm;
+
+	bluqForm = bluqIntern.makeForm("robotomy request", "bluq form");
+	bluq.signForm(*bluqForm);
+	bluq.executeForm(*bluqForm);
+	delete bluqForm;
+
+	bluqForm = bluqIntern.makeForm("Robotomy Request", "Bluq Form");
+	bluq.signForm(*bluqForm);
+	bluq.executeForm(*bluqForm);
+	delete bluqForm;
+
+	bluqForm = bluqIntern.makeForm("ROBOTOMY REQUEST", "BLUQ FORM");
+	bluq.signForm(*bluqForm);
+	bluq.executeForm(*bluqForm);
+	delete bluqForm;
 }
 
 void	testInternMakePresidentialPardonForms(std::size_t testIndex)
 {
 	PP_TEST(testIndex);
 
+	Bureaucrat cenia("Cenia", Bureaucrat::HIGHEST_GRADE);
 	Intern ceniaIntern;
+
+	AForm* ceniaForm = ceniaIntern.makeForm("presidentialpardon", "ceniaform");
+	cenia.signForm(*ceniaForm);
+	cenia.executeForm(*ceniaForm);
+	delete ceniaForm;
+
+	ceniaForm = ceniaIntern.makeForm("presidential pardon", "cenia form");
+	cenia.signForm(*ceniaForm);
+	cenia.executeForm(*ceniaForm);
+	delete ceniaForm;
+
+	ceniaForm = ceniaIntern.makeForm("Presidential Pardon", "Cenia Form");
+	cenia.signForm(*ceniaForm);
+	cenia.executeForm(*ceniaForm);
+	delete ceniaForm;
+
+	ceniaForm = ceniaIntern.makeForm("PRESIDENTIAL PARDON", "CENIA FORM");
+	cenia.signForm(*ceniaForm);
+	cenia.executeForm(*ceniaForm);
+	delete ceniaForm;
 }
 
 void	testInternMakeInvalidForm(std::size_t testIndex)
