@@ -6,7 +6,7 @@
 /*   By: ribana-b <ribana-b@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 20:19:12 by ribana-b          #+#    #+# Malaga      */
-/*   Updated: 2025/06/03 11:20:50 by ribana-b         ###   ########.com      */
+/*   Updated: 2025/06/04 07:08:17 by ribana-b         ###   ########.com      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,21 @@ Intern&	Intern::operator=(const Intern&)
 
 AForm*	Intern::makeForm(const std::string& name, const std::string& target) const
 {
-	FormMap formMapShrubberyCreation = { "shrubberycreation", makeShrubberyCreationForm, };
-	FormMap formMapRobotomyRequest = { "robotomyrequest", makeRobotomyRequestForm, };
-	FormMap formMapPresidentialPardon = { "presidentialpardon", makePresidentialPardonForm };
+	FormMap formMapShrubberyCreation = {
+		"shrubberycreation",
+		"Shrubbery Creation Form",
+		makeShrubberyCreationForm,
+	};
+	FormMap formMapRobotomyRequest = {
+		"robotomyrequest",
+		"Robotomy Request Form",
+		makeRobotomyRequestForm,
+	};
+	FormMap formMapPresidentialPardon = {
+		"presidentialpardon",
+		"Presidential Pardon Form",
+		makePresidentialPardonForm,
+	};
 
 	FormMap formMaps[] = {
 		formMapShrubberyCreation,
@@ -62,7 +74,7 @@ AForm*	Intern::makeForm(const std::string& name, const std::string& target) cons
 	{
 		if (understandFormName(formMaps[i].name, name))
 		{
-			std::cout << "Intern creates " << name << std::endl;
+			std::cout << "Intern creates " << formMaps[i].realName << std::endl;
 			return (formMaps[i].func(target));
 		}
 	}
@@ -70,7 +82,7 @@ AForm*	Intern::makeForm(const std::string& name, const std::string& target) cons
 	throw(UnknownFormException());
 }
 
-std::string	Intern::convertToReadableName(const std::string& name) const
+std::string	Intern::convertToReadableName(const std::string& name)
 {
 	std::string readable;
 	std::size_t length = name.length();
@@ -86,7 +98,7 @@ std::string	Intern::convertToReadableName(const std::string& name) const
 	return readable;
 }
 
-bool	Intern::understandFormName(const std::string& formName, const std::string& name) const
+bool	Intern::understandFormName(const std::string& formName, const std::string& name)
 {
 	if (name.compare(formName) == 0)
 	{

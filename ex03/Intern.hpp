@@ -6,7 +6,7 @@
 /*   By: ribana-b <ribana-b@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 20:07:39 by ribana-b          #+#    #+# Malaga      */
-/*   Updated: 2025/06/03 11:02:15 by ribana-b         ###   ########.com      */
+/*   Updated: 2025/06/04 07:07:58 by ribana-b         ###   ########.com      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 /* @------------------------------------------------------------------------@ */
 /* |                            Include Section                             | */
 /* @------------------------------------------------------------------------@ */
+
 
 # include "AForm.hpp"
 
@@ -42,14 +43,15 @@ class Intern
 	private:
 		typedef AForm* (*MakeFormFunc)(const std::string& name);
 
-		struct FormMap
+		typedef struct
 		{
 			const std::string		name;
+			const std::string		realName;
 			Intern::MakeFormFunc	func;
-		};
+		} FormMap;
 
-		std::string	convertToReadableName(const std::string& name) const;
-		bool		understandFormName(const std::string& formName, const std::string& name) const;
+		static std::string	convertToReadableName(const std::string& name);
+		static bool			understandFormName(const std::string& formName, const std::string& name);
 
 		static AForm*	makeShrubberyCreationForm(const std::string& target);
 		static AForm*	makeRobotomyRequestForm(const std::string& target);
